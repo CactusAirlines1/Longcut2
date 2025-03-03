@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Longcut Shortcut</title>
     <style>
-        /* Default styles (Light Mode) */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             background-color: #f9f9f9;
-            color: #333;
         }
-
         h1 {
             color: #333;
         }
-
         .download-link {
             margin-top: 20px;
             display: inline-block;
@@ -26,17 +22,14 @@
             text-decoration: none;
             border-radius: 5px;
         }
-
         .qr-code {
             margin-top: 20px;
             width: 150px;
         }
-
         video {
             margin-top: 20px;
             width: 100%;
         }
-
         .instructions {
             margin-top: 30px;
             background-color: #f1f1f1;
@@ -44,63 +37,70 @@
             border-radius: 5px;
             border: 1px solid #ddd;
         }
-
-        /* Dark Mode Styles */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #121212;
-                color: #f9f9f9;
-            }
-
-            h1, .download-link {
-                color: #f9f9f9;
-            }
-
-            .download-link {
-                background-color: #006400;
-            }
-
-            .instructions {
-                background-color: #2c2c2c;
-                border-color: #444;
-            }
-
-            .qr-code {
-                border: 2px solid #fff; /* Make QR code visible in dark mode */
-            }
+        .instructions h2 {
+            color: #333;
+        }
+        .light-dark-toggle {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .summary {
+            margin-top: 20px;
+            background-color: #eef;
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
     <h1>Longcut</h1>
-    <p>This thing has many things</p>
+    <p>This shortcut lets you retrieve a date based on your device's unique ID. It’s flexible and customizable, and it involves a few simple steps to get started.</p>
 
     <h2>Download Link</h2>
     <a class="download-link" href="https://www.icloud.com/shortcuts/0626cd7ca69e41ae9b748c5657d8fe3e" download>Download Longcut</a>
 
     <h2>QR Code</h2>
-    <p><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">Click here to view the QR code</a></p>
+    <p><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">View QR Code</a></p>
 
     <h2>Instructions for Changing the ID for the Website (Recommended to do this right away)</h2>
     <div class="instructions">
-        <p>First, there's a comment right at the top, it has an arrow which points to a text box. That's where you want to put your id.</p>
-        <p>Below will be a video showing the entire process. It doesn't take long.</p>
+        <p>First, there’s a comment right at the top of the shortcut, it has an arrow pointing to a text box. That’s where you want to put your ID. Then, locate the "get item from list" action and change the index to "2." Once this is done, you can run the shortcut.</p>
+        <p>It’s important to note that the date the shortcut will display might be a bit different from the actual date, usually by a few hours, but this detail is not crucial. If you don’t change the index, the shortcut will generate a date based on your device name.</p>
+        <p>In the video, there is an additional action that stops the shortcut from creating another ID. This action is the "stop this shortcut" action, which was added to the shortcut. However, <strong>do not add this action to the shortcut yourself, as it will prevent it from working correctly.</strong></p>
     </div>
 
     <h2>Video</h2>
-    <p>Watch the video below for the process:</p>
-    
-    <!-- Embed the video -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ei5h0J-6bXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>Video showing the process mentioned above:</p>
+    <p><a href="https://youtu.be/Ei5h0J-6bXc" target="_blank">Watch the video on YouTube</a></p>
+    <p><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">Watch the video on Google Drive</a></p>
+    <p><a href="https://www.icloud.com/iclouddrive/0A0D0_031CQRHwRyWjk6EKMeQ#ScreenRecording_02-27-2025_14-25-14_1" target="_blank">Watch the video on iCloud</a></p>
 
-    <h3>Alternative Video Links:</h3>
-    <p>Click the links below to view the video:</p>
-    <ul>
-        <li><a href="https://drive.google.com/file/d/096x1XuMBJkoYdpQ9qeBesC2Q/view?usp=drivesdk" target="_blank">View on Google Drive</a></li>
-        <li><a href="https://www.icloud.com/iclouddrive/096x1XuMBJkoYdpQ9qeBesC2Q#ScreenRecording_02-27-2025_14-25-14_1" target="_blank">View on iCloud</a></li>
-        <li><a href="https://youtu.be/Ei5h0J-6bXc" target="_blank">Watch on YouTube</a></li>
-    </ul>
+    <h2>Toggle Appearance</h2>
+    <p><button class="light-dark-toggle" onclick="toggleMode()">Switch to Light Mode / Dark Mode</button></p>
 
+    <h2>Summary</h2>
+    <div class="summary">
+        <p>This shortcut allows you to use a unique ID to retrieve a date, which can be adjusted by changing the ID and running the shortcut. The shortcut is simple to set up but customizable, making it a useful tool for many applications.</p>
+    </div>
+
+    <script>
+        function toggleMode() {
+            const currentMode = document.documentElement.getAttribute('data-theme');
+            if (currentMode === 'light') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else if (currentMode === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'system');
+            }
+        }
+    </script>
 </body>
 </html>
