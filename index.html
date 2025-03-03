@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Longcut Shortcut</title>
     <style>
+        /* Default styles for light mode */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             background-color: #f9f9f9;
+            color: #333;
         }
         h1 {
             color: #333;
@@ -56,6 +58,21 @@
             padding: 10px;
             border-radius: 5px;
         }
+
+        /* Dark mode styles */
+        [data-theme="dark"] {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        [data-theme="dark"] h1, [data-theme="dark"] .instructions h2 {
+            color: #f9f9f9;
+        }
+        [data-theme="dark"] .download-link {
+            background-color: #45a049;
+        }
+        [data-theme="dark"] .light-dark-toggle {
+            background-color: #bbb;
+        }
     </style>
 </head>
 <body>
@@ -91,6 +108,11 @@
     </div>
 
     <script>
+        // Set initial theme to system preference
+        const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', systemPreference);
+
+        // Toggle between light, dark, and system theme
         function toggleMode() {
             const currentMode = document.documentElement.getAttribute('data-theme');
             if (currentMode === 'light') {
