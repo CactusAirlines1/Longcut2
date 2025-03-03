@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Longcut Shortcut</title>
     <style>
-        /* Default styles for light mode */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             background-color: #f9f9f9;
             color: #333;
         }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #fff;
+            }
+        }
         h1 {
-            color: #333;
+            color: inherit;
         }
         .download-link {
             margin-top: 20px;
@@ -26,11 +31,11 @@
         }
         .qr-code {
             margin-top: 20px;
-            width: 150px;
+            width: 150px; 
         }
         video {
             margin-top: 20px;
-            width: 100%;
+            width: 100%; 
         }
         .instructions {
             margin-top: 30px;
@@ -40,92 +45,44 @@
             border: 1px solid #ddd;
         }
         .instructions h2 {
-            color: #333;
+            color: inherit;
         }
-        .light-dark-toggle {
-            margin-top: 20px;
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .summary {
-            margin-top: 20px;
-            background-color: #eef;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        /* Dark mode styles */
-        [data-theme="dark"] {
-            background-color: #121212;
-            color: #ffffff;
-        }
-        [data-theme="dark"] h1, [data-theme="dark"] .instructions h2 {
-            color: #f9f9f9;
-        }
-        [data-theme="dark"] .download-link {
-            background-color: #45a049;
-        }
-        [data-theme="dark"] .light-dark-toggle {
-            background-color: #bbb;
+        @media (prefers-color-scheme: dark) {
+            .instructions {
+                background-color: #333;
+                border-color: #555;
+            }
         }
     </style>
 </head>
 <body>
-
     <h1>Longcut</h1>
-    <p>This shortcut lets you retrieve a date based on your device's unique ID. It’s flexible and customizable, and it involves a few simple steps to get started.</p>
+    <p>This shortcut is a comprehensive tool with nearly 500 actions, incorporating many of my previously created and optimized shortcuts. It continuously updates as I come up with new ideas for improvements.</p>
 
     <h2>Download Link</h2>
     <a class="download-link" href="https://www.icloud.com/shortcuts/0626cd7ca69e41ae9b748c5657d8fe3e" download>Download Longcut</a>
 
     <h2>QR Code</h2>
+    <img class="qr-code" src="https://drive.google.com/uc?export=view&id=1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR" alt="QR Code">
     <p><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">View QR Code</a></p>
+
+    <h2>Video</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ei5h0J-6bXc" frameborder="0" allowfullscreen></iframe>
+    <p><a href="https://youtu.be/Ei5h0J-6bXc" target="_blank">Watch on YouTube</a></p>
+    <p><a href="https://www.icloud.com/iclouddrive/096x1XuMBJkoYdpQ9qeBesC2Q#ScreenRecording_02-27-2025_14-25-14_1" target="_blank">Watch on iCloud</a></p>
+    <p><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">Watch on Google Drive</a></p>
 
     <h2>Instructions for Changing the ID for the Website (Recommended to do this right away)</h2>
     <div class="instructions">
-        <p>First, there’s a comment right at the top of the shortcut, it has an arrow pointing to a text box. That’s where you want to put your ID. Then, locate the "get item from list" action and change the index to "2." Once this is done, you can run the shortcut.</p>
-        <p>It’s important to note that the date the shortcut will display might be a bit different from the actual date, usually by a few hours, but this detail is not crucial. If you don’t change the index, the shortcut will generate a date based on your device name.</p>
-        <p>In the video, there is an additional action that stops the shortcut from creating another ID. This action is the "stop this shortcut" action, which was added to the shortcut. However, <strong>do not add this action to the shortcut yourself, as it will prevent it from working correctly.</strong></p>
+        <p>First, there's a comment right at the top, it has an arrow which points to a text box. That's where you want to put your ID. 
+        There is a list, look for the "Get Item from List" action, it should be at index 1. Change it to 2. Then, run the shortcut. All this is 
+        just to get a date. The date it will show might be slightly different than what it is actually supposed to be, usually by 
+        a few hours. No big deal. It's not all that important, but it's a nice detail.</p>
+
+        <p>Below will be a video showing the entire process. It doesn't take long. In the video, there is an additional action that 
+        I put in so that I didn't have to clear the ID that would be created. This action is the "Stop This Shortcut" action, which 
+        prevents the shortcut from creating another ID because it is before the web part. This action is not in the shortcut linked here (I removed it). <strong>Do not add this action in the shortcut. 
+        It will not work.</strong></p>
     </div>
-
-    <h2>Video</h2>
-    <p>Video showing the process mentioned above:</p>
-    <p><a href="https://youtu.be/Ei5h0J-6bXc" target="_blank">Watch the video on YouTube</a></p>
-    <p><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">Watch the video on Google Drive</a></p>
-    <p><a href="https://www.icloud.com/iclouddrive/0A0D0_031CQRHwRyWjk6EKMeQ#ScreenRecording_02-27-2025_14-25-14_1" target="_blank">Watch the video on iCloud</a></p>
-
-    <h2>Toggle Appearance</h2>
-    <p><button class="light-dark-toggle" onclick="toggleMode()">Switch to Light Mode / Dark Mode</button></p>
-
-    <h2>Summary</h2>
-    <div class="summary">
-        <p>This shortcut is a comprehensive tool with nearly 500 actions, incorporating many of my previously created and optimized shortcuts. It continuously updates as I come up with new ideas for improvements.</p>
-    </div>
-
-    <script>
-        // Detect system theme and apply it
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', systemTheme);
-
-        // Listen for changes in system theme
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-        });
-
-        // Toggle between light and dark theme
-        function toggleMode() {
-            const currentMode = document.documentElement.getAttribute('data-theme');
-            if (currentMode === 'light') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        }
-    </script>
 </body>
 </html>
