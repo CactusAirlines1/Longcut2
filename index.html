@@ -104,23 +104,26 @@
 
     <h2>Summary</h2>
     <div class="summary">
-        <p>This shortcut allows you to use a unique ID to retrieve a date, which can be adjusted by changing the ID and running the shortcut. The shortcut is simple to set up but customizable, making it a useful tool for many applications.</p>
+        <p>This shortcut is a comprehensive tool with nearly 500 actions, incorporating many of my previously created and optimized shortcuts. It continuously updates as I come up with new ideas for improvements.</p>
     </div>
 
     <script>
-        // Set initial theme to system preference
-        const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', systemPreference);
+        // Detect system theme and apply it
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', systemTheme);
 
-        // Toggle between light, dark, and system theme
+        // Listen for changes in system theme
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        });
+
+        // Toggle between light and dark theme
         function toggleMode() {
             const currentMode = document.documentElement.getAttribute('data-theme');
             if (currentMode === 'light') {
                 document.documentElement.setAttribute('data-theme', 'dark');
-            } else if (currentMode === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
             } else {
-                document.documentElement.setAttribute('data-theme', 'system');
+                document.documentElement.setAttribute('data-theme', 'light');
             }
         }
     </script>
