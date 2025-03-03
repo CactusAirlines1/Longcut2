@@ -8,34 +8,20 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--bg-color, #f9f9f9);
+            color: var(--text-color, #333);
         }
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #222;
-                color: #fff;
-            }
+        h1, h2 {
+            color: var(--text-color, #333);
         }
-        h1 {
-            color: inherit;
-        }
-        .download-link {
-            margin-top: 20px;
+        .download-link, .video-link {
+            margin-top: 10px;
             display: inline-block;
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-        }
-        .qr-code {
-            margin-top: 20px;
-            width: 150px; 
-        }
-        video {
-            margin-top: 20px;
-            width: 100%; 
         }
         .instructions {
             margin-top: 30px;
@@ -45,17 +31,12 @@
             border: 1px solid #ddd;
         }
         .instructions h2 {
-            color: inherit;
-        }
-        @media (prefers-color-scheme: dark) {
-            .instructions {
-                background-color: #333;
-                border-color: #555;
-            }
+            color: var(--text-color, #333);
         }
     </style>
 </head>
 <body>
+
     <h1>Longcut</h1>
     <p>This shortcut is a comprehensive tool with nearly 500 actions, incorporating many of my previously created and optimized shortcuts. It continuously updates as I come up with new ideas for improvements.</p>
 
@@ -63,26 +44,24 @@
     <a class="download-link" href="https://www.icloud.com/shortcuts/0626cd7ca69e41ae9b748c5657d8fe3e" download>Download Longcut</a>
 
     <h2>QR Code</h2>
-    <img class="qr-code" src="https://drive.google.com/uc?export=view&id=1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR" alt="QR Code">
     <p><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">View QR Code</a></p>
 
-    <h2>Video</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ei5h0J-6bXc" frameborder="0" allowfullscreen></iframe>
-    <p><a href="https://youtu.be/Ei5h0J-6bXc" target="_blank">Watch on YouTube</a></p>
-    <p><a href="https://www.icloud.com/iclouddrive/096x1XuMBJkoYdpQ9qeBesC2Q#ScreenRecording_02-27-2025_14-25-14_1" target="_blank">Watch on iCloud</a></p>
-    <p><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">Watch on Google Drive</a></p>
-
-    <h2>Instructions for Changing the ID for the Website (Recommended to do this right away)</h2>
+    <h2>Instructions for Changing the ID for the Website</h2>
     <div class="instructions">
-        <p>First, there's a comment right at the top, it has an arrow which points to a text box. That's where you want to put your ID. 
-        There is a list, look for the "Get Item from List" action, it should be at index 1. Change it to 2. Then, run the shortcut. All this is 
-        just to get a date. The date it will show might be slightly different than what it is actually supposed to be, usually by 
-        a few hours. No big deal. It's not all that important, but it's a nice detail.</p>
-
-        <p>Below will be a video showing the entire process. It doesn't take long. In the video, there is an additional action that 
-        I put in so that I didn't have to clear the ID that would be created. This action is the "Stop This Shortcut" action, which 
-        prevents the shortcut from creating another ID because it is before the web part. This action is not in the shortcut linked here (I removed it). <strong>Do not add this action in the shortcut. 
-        It will not work.</strong></p>
+        <p>To properly set up Longcut, follow these steps:</p>
+        <ol>
+            <li>Locate the comment at the top of the shortcut. It has an arrow pointing to a text box—this is where you should enter your ID.</li>
+            <li>Find the "Get Item from List" action, which is initially set to index 1. Change this index to 2.</li>
+            <li>Run the shortcut. This step is necessary to generate the date.</li>
+        </ol>
+        <p>Note: In the demonstration video, a "Stop This Shortcut" action was temporarily added before the web request step to prevent overwriting an existing ID. This action has been removed from the final shortcut. <strong>Do not add this action to the shortcut, as it will prevent it from working correctly.</strong></p>
     </div>
+
+    <h2>Video</h2>
+    <p>The following video demonstrates the setup process:</p>
+    <p><a class="video-link" href="https://www.icloud.com/iclouddrive/096x1XuMBJkoYdpQ9qeBesC2Q#ScreenRecording_02-27-2025_14-25-14_1" target="_blank">Watch on iCloud</a></p>
+    <p><a class="video-link" href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">Watch on Google Drive</a></p>
+    <p><a class="video-link" href="https://youtu.be/Ei5h0J-6bXc" target="_blank">Watch on YouTube</a></p>
+
 </body>
 </html>
