@@ -7,80 +7,67 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        :root {
+            --bg-color: white;
+            --text-color: black;
         }
         @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #222;
-                color: #f9f9f9;
+            :root {
+                --bg-color: #121212;
+                --text-color: white;
             }
         }
-        h1 {
-            color: inherit;
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
         }
-        .download-link {
-            margin-top: 20px;
+        .button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            margin: 10px;
             color: white;
+            background-color: #007bff;
             text-decoration: none;
             border-radius: 5px;
         }
-        .qr-code {
-            margin-top: 20px;
-            width: 150px; /* Adjust width as needed */
-        }
-        video {
-            margin-top: 20px;
-            width: 100%; /* Adjust width as needed */
-        }
-        .instructions {
-            margin-top: 30px;
-            background-color: #f1f1f1;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-        @media (prefers-color-scheme: dark) {
-            .instructions {
-                background-color: #333;
-                border-color: #555;
-            }
+        .button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Longcut</h1>
-    <p>This shortcut is a comprehensive tool with nearly 500 actions, incorporating many of my previously created and optimized shortcuts. It continuously updates as I come up with new ideas for improvements.</p>
-
-    <h2>Download Link</h2>
-    <a class="download-link" href="https://www.icloud.com/shortcuts/a0d236e1b70648288e0936ab282a7837" download>Download Longcut</a>
-
-    <h2>QR Code</h2>
-    <p><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">View QR Code</a></p>
-
-    <h2>Instructions</h2>
-    <div class="instructions">
-        <p>To set up your ID for the website, follow these steps:</p>
-        <ol>
-            <li>Locate the comment at the top of the shortcut. It points to a text box where you should enter your ID.</li>
-            <li>Find the "Get Item from List" action. Change its index to "2."</li>
-            <li>Run the shortcut. This process assigns a date, which might be slightly off by a few hours but is generally accurate.</li>
-        </ol>
-        <p>In the video, a "Stop This Shortcut" action was added before the web request to prevent creating a new ID. <strong>Do not add this action</strong> to your shortcut; it will prevent it from working properly. Also in the video, I used the ID "FakeID". The ID you use does not matter.</p>
+    <div class="container">
+        <h1>Longcut</h1>
+        <p>This shortcut is a comprehensive tool with nearly 500 actions, incorporating many of my previously created and optimized shortcuts. It continuously updates as I come up with new ideas for improvements.</p>
+        
+        <a href="[LATEST_VERSION_LINK]" class="button">Download Latest Version</a>
+        
+        <h2>Instructions</h2>
+        <p>1. Download and install the shortcut.<br>
+           2. Locate the "Get Item from List" action and change the index to "2".<br>
+           3. Run the shortcut.<br>
+           4. Do not add the "Stop this Shortcut" action, as it will prevent the shortcut from functioning.</p>
+        
+        <h2>Video Tutorial</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ei5h0J-6bXc" frameborder="0" allowfullscreen></iframe>
+        <p>If there's nothing there, try one of these:</p>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=Ei5h0J-6bXc">YouTube</a></li>
+            <li><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk">Google Drive</a></li>
+            <li><a href="[iCloud_LINK]">iCloud</a></li>
+        </ul>
+        
+        <h2>Versions</h2>
+        <ul>
+            <li><a href="[VERSION_1.1_LINK]">Version 1.1</a></li>
+            <li><a href="[VERSION_1.0_LINK]">Version 1.0</a></li>
+        </ul>
     </div>
-
-    <h2>Video</h2>
-    <p>Watch the video below for a visual on how to do this:</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ei5h0J-6bXc" frameborder="0" allowfullscreen></iframe>
-    <p>If there is nothing there, use one of these links:</p>
-    <ul>
-        <li><a href="https://www.icloud.com/iclouddrive/096x1XuMBJkoYdpQ9qeBesC2Q#ScreenRecording_02-27-2025_14-25-14_1" target="_blank">iCloud Drive</a></li>
-        <li><a href="https://drive.google.com/file/d/1eqa2uTsOm1xitNzll8laAe9LoNZQK-oR/view?usp=drivesdk" target="_blank">Google Drive</a></li>
-        <li><a href="https://www.youtube.com/watch?v=Ei5h0J-6bXc" target="_blank">YouTube</a></li>
-    </ul>
 </body>
 </html>
